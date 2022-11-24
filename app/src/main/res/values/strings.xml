@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Pharmacy Inventory</string>
+    <string name="add_supplier">Add supplier</string>
+    <string name="add_entry">Add Entry</string>
+    <string name="entry">Entry</string>
+    <string name="company_name">Company Name <font color ="#ff0000" >*</font></string>
+    <string name="received">Received</string>
+    <string name="paid">Paid</string>
+    <string name="add_paid">Paid <font color ="#ff0000" >*</font></string>
+    <string name="delete">Delete</string>
+    <string name="save">Save</string>
+    <string name="date">Date</string>
+    <string name="cancel">Cancel</string>
+    <string name="update">Update</string>
+    <string name="try_again">Try again!</string>
+    <string name="total_remainder">Total remainder: %s</string>
+    <string name="cash_report">Cash Report</string>
+    <string name="app_description">Create entries and keep track of your cash flow</string>
+    <string name="new_supplier"><font color="#ff0000">new</font> Supplier</string>
+    <string name="monitoring">Monitoring</string>
+    <string name="last_purchase">last purchase: %s</string>
+    <string name="statistics">Statistics</string>
+    <string name="daily_entries">Daily Entries</string>
+    <string name="supplier_entries">Supplier Entries</string>
+    <string name="choose_time">choose time</string>
+
+    <string-array name="names">
+        <item>Mirena</item>
+        <item>Jamxur</item>
+        <item>Oriyo Mexr</item>
+        <item>Kamalak-S</item>
+        <item>Bek Baraka</item>
+        <item>Garmoniya</item>
+        <item>Yumaks</item>
+        <item>Asklepiy</item>
+        <item>Askorbinka</item>
+        <item>Zenta</item>
+        <item>Bionik</item>
+        <item>Sogdafarm</item>
+    </string-array>
+</resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/supplier_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Supplier Name" />
+
+    <TextView
+        android:id="@+id/received"
+        style="@style/Widget.PharmacyInventory.Header"
+        android:layout_marginStart="8dp"
+        android:text="@string/received"
+        app:layout_constraintEnd_toStartOf="@id/paid"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/supplier_name" />
+
+    <TextView
+        android:id="@+id/paid"
+        style="@style/Widget.PharmacyInventory.Header"
+        android:layout_below="@+id/received"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/paid"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@id/date"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/received"
+        app:layout_constraintTop_toBottomOf="@id/supplier_name" />
+
+    <TextView
+        android:id="@+id/date"
+        style="@style/Widget.PharmacyInventory.Header"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+        android:text="@string/date"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/paid"
+        app:layout_constraintTop_toBottomOf="@id/supplier_name" />
+
+    <View
+        android:id="@+id/divider"
+        style="@style/Divider"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/date" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintBottom_toTopOf="@id/dividerBottom"
+        tools:itemCount="15"
+        tools:listitem="@layout/item_supplier_entry" />
+    <View
+        android:id="@+id/dividerBottom"
+        style="@style/Divider"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/total_remainder"
+        app:layout_constraintTop_toBottomOf="@id/recycler_view" />
+
+    <TextView
+        android:id="@+id/total_remainder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16sp"
+        android:paddingBottom="16dp"
+        android:text="@string/total_remainder"
+        android:textAlignment="textEnd"
+        android:textAppearance="?attr/textAppearanceOverline"
+        android:textColor="?attr/colorPrimary"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dividerBottom" />
+</androidx.constraintlayout.widget.ConstraintLayout>

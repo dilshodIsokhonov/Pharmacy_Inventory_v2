@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_full_entry">
+
+    <fragment
+        android:id="@+id/nav_full_entry"
+        android:name="com.example.pharmacyinventory.ui.FullEntryFragment"
+        android:label="@string/daily_entries"
+        tools:layout="@layout/fragment_full_entry">
+        <action
+            android:id="@+id/action_nav_full_entry_to_nav_supplier_entry"
+            app:destination="@id/nav_supplier_entry" />
+        <action
+            android:id="@+id/action_nav_full_entry_to_nav_add_entry"
+            app:destination="@id/nav_add_entry" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_supplier_entry"
+        android:name="com.example.pharmacyinventory.ui.SupplierEntryFragment"
+        android:label="@string/supplier_entries"
+        tools:layout="@layout/fragment_supplier_entry">
+        <argument
+            android:name="id"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <argument
+            android:name="name"
+            android:defaultValue="null"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_nav_supplier_entry_to_nav_full_entry"
+            app:destination="@id/nav_full_entry" />
+        <action
+            android:id="@+id/action_nav_supplier_entry_to_nav_add_entry"
+            app:destination="@id/nav_add_entry" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_supplier_cash_report"
+        android:name="com.example.pharmacyinventory.ui.SupplierCashReportFragment"
+        android:label="@string/cash_report"
+        tools:layout="@layout/fragment_supplier_cash_report">
+
+        <action
+            android:id="@+id/action_nav_supplier_cash_report_to_nav_supplier_entry"
+            app:destination="@id/nav_supplier_entry" />
+        <action
+            android:id="@+id/action_nav_supplier_cash_report_to_nav_cash_flow_statistics"
+            app:destination="@id/nav_cash_flow_statistics" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_cash_flow_statistics"
+        android:name="com.example.pharmacyinventory.ui.CashFlowStatisticsFragment"
+        android:label="Statistics"
+        tools:layout="@layout/fragment_cash_flow_statistics" />
+
+    <dialog
+        android:id="@+id/nav_add_entry"
+        android:name="com.example.pharmacyinventory.ui.AddEntryDialogFragment"
+        tools:layout="@layout/fragment_add_entry_dialog">
+        <argument
+            android:name="id"
+            android:defaultValue="0L"
+            app:argType="long" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/datePickerDialogFragment"
+        android:name="com.example.pharmacyinventory.ui.DatePickerDialogFragment"
+        android:label="DatePickerDialogFragment" />
+</navigation>
